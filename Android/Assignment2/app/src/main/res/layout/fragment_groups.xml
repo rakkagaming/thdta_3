@@ -1,0 +1,20 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="mah.thdta3.robin.android.assignment2.GroupsFragment">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/currently_existing_groups"
+        android:textAlignment="center"
+        android:textSize="24dp" />
+
+    <ListView
+        android:id="@+id/groupList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

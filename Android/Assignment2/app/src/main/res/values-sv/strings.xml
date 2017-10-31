@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Assignment2</string>
+
+    <string name="navigation_drawer_open">Öppna Meny</string>
+    <string name="navigation_drawer_close">Stäng Meny</string>
+    <string name="google_maps_key">AIzaSyDHBCHbWBTdwgsX8cA_U4BswTcLTTzbgmc</string>
+    <string name="action_settings">Settings</string>
+    <string name="current_group">Medlemmar i nuvarande grupp, </string>
+    <string name="register_title">Registrera</string>
+    <string name="english">Engelska</string>
+    <string name="swedish">Svenska</string>
+    <string name="map">Karta</string>
+    <string name="members">Medlemmar</string>
+    <string name="groups">Grupper</string>
+    <string name="register">Registrera</string>
+    <string name="currently_existing_groups">Nuvarande Grupper</string>
+    <string name="unregister">Ta bort registrering</string>
+
+</resources>

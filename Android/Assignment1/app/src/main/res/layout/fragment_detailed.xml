@@ -1,0 +1,63 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="mah.thdta3.robin.android.assignment1.DetailedFragment"
+    android:background="@drawable/soothing">
+
+    <TextView
+        android:id="@+id/detailTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="temp, title"
+        android:textSize="50sp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:id="@+id/detailType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:text="temp, show type"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:id="@+id/detailAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="temp, show amount"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/detailDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="temp, show date"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/detailCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="temp, show category"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+
+
+</LinearLayout>

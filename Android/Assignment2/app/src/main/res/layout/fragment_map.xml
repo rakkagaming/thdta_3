@@ -1,0 +1,18 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="mah.thdta3.robin.android.assignment2.MapFragment">
+
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:apiKey="AIzaSyBuOuyv4Sv_m1HRGZ_rhRtl3Ss3bD1KaQk"
+        android:clickable="true">
+
+    </com.google.android.gms.maps.MapView>
+
+</LinearLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/adapterLayout">
+
+    <ImageView
+        android:id="@+id/adapterIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:srcCompat="@drawable/airplane"
+        android:layout_alignBottom="@+id/adapterDate"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:id="@+id/adapterTitle"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/adapterAmount" />
+
+    <TextView
+        android:id="@+id/adapterDate"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/adapterAmount"
+        android:text="Date"
+        android:textAlignment="textEnd"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/adapterCategory"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/adapterTitle"
+        android:text="Category"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:layout_toStartOf="@+id/adapterDate" />
+
+    <TextView
+        android:id="@+id/adapterAmount"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:text="Amount"
+        android:textAlignment="textEnd"
+        android:textSize="24sp" />
+
+</RelativeLayout>
