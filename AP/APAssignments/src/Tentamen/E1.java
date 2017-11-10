@@ -1,38 +1,46 @@
 package Tentamen;
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.geom.AffineTransform;
+import java.awt.geom.Rectangle2D;
+
 /**
  * Created by robin on 20/10/2017.
  */
-public class E1 {
+public class E1 extends JPanel{
     static int rounds = 0;
-    public static void main(String[] args) {
-        int[] array = new int[2048];
+    public void paintComponent( Graphics g )
+    {
+        super.paintComponent( g );
+        Graphics2D g2d = (Graphics2D) g;
 
-        for (int i = 0; i < 2048; i++) {
-            if (i<1024){array[i]=i;}
-            else{array[i] = 5000-i;}
-        }
-        System.out.println(largest(array,0,array.length-1));
-        System.out.println(rounds);
-    }
+        // The 20x20 rectangle that you want to draw
+        Rectangle2D rect = new Rectangle2D.Double( 0, 0, 20, 20 );
 
-    private static int power(int a, int b) {
-        if(b==0) return 1;
-        int c = power(a, b/2);
-        if (b%2==0) return c*c;
-        else return a*c*c;
-    }
+        // This transform is used to modify the rectangle (an affine
+        // transform is a way to do operations like translations, rotations,
+        // scalings, etc...)
+        AffineTransform transform = new AffineTransform();
 
-    private static int largest(int[] array, int a, int b){
-        if(a==b) {return a;}
-        if (b-a==1){
-            int i = (array[a]>array[b]?a:b);
-            rounds ++;
-            return i;
-        }
-        rounds++;
-        int k = ((b-a)/2)+a;
-        if (array[k]<array[k-1]) return largest(array,a,k-1);
-        return largest(array,k,b);
+        // 3rd operation performed: translate the rectangle to the desired
+        // x and y position
+        //transform.translate( x + 10, y + 10 );
+
+        // 2nd operation performed: rotate the rectangle around the origin
+        transform.rotate( 10 );
+
+        // 1st operation performed: translate the rectangle such that it is
+        // centered on the origin
+        //transform.translate( -10, -10 );
+
+        // Apply the affine transform
+        Shape s = transform.createTransformedShape( rect );
+
+        // Fill the shape with the current paint
+        g2d.fill( s );
+
+        // Stroke the edge of the shape with the current paint
+        g2d.draw( s );
     }
 }
