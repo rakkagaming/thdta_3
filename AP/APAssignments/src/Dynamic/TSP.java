@@ -30,7 +30,6 @@ public class TSP {
                 columns = Integer.parseInt(input[1]);
 
                 createMatrix(rows, columns);
-
                 traverseMatrix();
 
                 int value = findShortest();
@@ -55,9 +54,8 @@ public class TSP {
         rowPath = new ArrayList();
 
         for (int i = 0; i < rows; i++) {
-            int temp = 0;//matrix[i][0].pathValue;
+            int temp = 0;
             ArrayList<Integer> tempPath = new ArrayList<>();
-            //System.out.println();
 
             Node current = matrix[i][0];
             while(current!=null){
@@ -92,16 +90,25 @@ public class TSP {
                 if (matrix[rows-1][column-1].parent == null || matrix[rows-1][column-1].parent.pathValue > matrix[row][column].pathValue){
                     matrix[rows-1][column-1].setParent(matrix[row][column]);
                     matrix[rows-1][column-1].pathValue =  matrix[row][column].pathValue + matrix[rows-1][column-1].value;
+                }else if(matrix[rows-1][column-1].parent.pathValue==matrix[row][column].pathValue && matrix[rows-1][column-1].parent.row > matrix[row][column].row){
+                    matrix[rows-1][column-1].setParent(matrix[row][column]);
+                    matrix[rows-1][column-1].pathValue =  matrix[row][column].pathValue + matrix[rows-1][column-1].value;
                 }
             }else if((row-1+i)==rows){
                 //Kolla på node högst upp
                 if (matrix[0][column-1].parent == null || matrix[0][column-1].parent.pathValue > matrix[row][column].pathValue){
                     matrix[0][column-1].setParent(matrix[row][column]);
                     matrix[0][column-1].pathValue =  matrix[row][column].pathValue + matrix[0][column-1].value;
+                }else if(matrix[0][column-1].parent.pathValue==matrix[row][column].pathValue && matrix[0][column-1].parent.row > matrix[row][column].row){
+                    matrix[0][column-1].setParent(matrix[row][column]);
+                    matrix[0][column-1].pathValue =  matrix[row][column].pathValue + matrix[0][column-1].value;
                 }
             }else{
                 //Kolla node
                 if (matrix[row-1+i][column-1].parent == null || matrix[row-1+i][column-1].parent.pathValue > matrix[row][column].pathValue){
+                    matrix[row-1+i][column-1].setParent(matrix[row][column]);
+                    matrix[row-1+i][column-1].pathValue =  matrix[row][column].pathValue + matrix[row-1+i][column-1].value;
+                }else if(matrix[row-1+i][column-1].parent.pathValue==matrix[row][column].pathValue && matrix[row-1+i][column-1].parent.row > matrix[row][column].row){
                     matrix[row-1+i][column-1].setParent(matrix[row][column]);
                     matrix[row-1+i][column-1].pathValue =  matrix[row][column].pathValue + matrix[row-1+i][column-1].value;
                 }
