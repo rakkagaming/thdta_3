@@ -57,13 +57,38 @@ namespace Assignment4
 
         public String[] GetGuests()
         {
-            return guestList;
+            int size = NumOfGuests();
+
+            if (size <= 0)  return null;
+
+            string[] tempList = new string[size];
+
+            for (int i = 0, j = 0; i < guestList.Length; i++) {
+                if (!string.IsNullOrEmpty(guestList[i])) {
+                    tempList[j++] = guestList[i];
+                }
+            }
+
+            return tempList;
         }
 
-        public double CalcCost(int onList)
-        {
-            double cost = price * onList;
-            return cost;
+        public double Cost {
+            get { return price; }
+            set {
+                if (value>=0) {
+                    price = value;
+                }
+            }
+        }
+
+        public int NumOfGuests() {
+            int x = 0;
+            for (int i = 0; i < guestList.Length; i++) {
+                if (!string.IsNullOrEmpty(guestList[i])) {
+                    x++;
+                }
+            }
+            return x;
         }
     }
 }

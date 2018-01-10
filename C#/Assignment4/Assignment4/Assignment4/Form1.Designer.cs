@@ -251,7 +251,7 @@
             this.Controls.Add(this.boxAddGuest);
             this.Controls.Add(this.boxNewParty);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Party Organizer";
             this.boxNewParty.ResumeLayout(false);
             this.boxNewParty.PerformLayout();
             this.boxAddGuest.ResumeLayout(false);

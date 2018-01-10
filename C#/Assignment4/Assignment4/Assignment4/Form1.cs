@@ -33,21 +33,28 @@ namespace Assignment4
             txtInputFirstName.Text = string.Empty;
             txtInputSurname.Text = string.Empty;
             listGuests.Items.Clear();
+            this.AcceptButton = btnCreateList;
 
             boxAddGuest.Enabled = false;
             btnDelete.Enabled = false;
+        }
+
+        private bool CheckIfPositive(String test) {
+            double.TryParse(test, out double x);
+            return (x>=0 );
         }
 
         private void btnCreateList_Click(object sender, EventArgs e)
         {
             int size;
             double cost;
-            if (int.TryParse(txtInputNrGuests.Text, out size) && double.TryParse(txtInputPrice.Text, out cost))
+            if ((int.TryParse(txtInputNrGuests.Text, out size) && CheckIfPositive(txtInputNrGuests.Text) )&& (double.TryParse(txtInputPrice.Text, out cost) && CheckIfPositive(txtInputPrice.Text)))
             {
                 party = new Party(size, cost);
                 boxNewParty.Enabled = false;
                 boxAddGuest.Enabled = true;
                 btnDelete.Enabled = true;
+                this.AcceptButton = btnAddGuest;
                 txtNrGuests.Text = "0";
             }
         }
@@ -57,7 +64,7 @@ namespace Assignment4
             int pos = int.Parse(txtNrGuests.Text);
             int a = party.AddGuest(txtInputFirstName.Text, txtInputSurname.Text, pos);
             if (a == -1) return;
-            double amount = party.CalcCost(a);
+            double amount = party.NumOfGuests() * party.Cost;
             string[] guests = party.GetGuests();
 
             txtNrGuests.Text = "" + a;
@@ -77,7 +84,7 @@ namespace Assignment4
                         listGuests.Items.Add(guests[i]);
                         }
                 }
-                txtCost.Text = "" + party.CalcCost(a);
+                //txtCost.Text = "" + party.CalcCost(a);
             }
         }
     }
